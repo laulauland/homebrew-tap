@@ -1,14 +1,14 @@
 class Mill < Formula
   desc "A runtime for executing TypeScript programs that can spawn agents"
   homepage "https://github.com/laulauland/mill"
-  url "https://github.com/laulauland/mill/archive/refs/tags/v0.1.3.tar.gz"
-  sha256 "4434913f105915e2d60e34f913d355d5daa26bca560fdd24ca4db6a8df2d2ea8"
+  url "https://github.com/laulauland/mill/archive/refs/tags/v0.1.4.tar.gz"
+  sha256 "c5d145c9c2f6fef9ad85a2a24ce0f0add1b9307a7b59023b09ad25a03f53be6c"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/laulauland/mill/releases/download/v0.1.3"
-    sha256 arm64_sequoia: "a8f45cf8839e91a2172ced9a76262b59648e3547e537c2b720e340777d79d62b"
-    sha256 x86_64_linux: "9ad228887a99c0985e7d3ba7f0d9a6e5364e869dae2472c572cef98c6318dde1"
+    root_url "https://github.com/laulauland/mill/releases/download/v0.1.4"
+    sha256 arm64_sequoia: "5d04900572e530969f50caab0bc83f47c0b382ffad6b25978a31bf44db02803e"
+    sha256 x86_64_linux: "6cd9a09c21991910de29aebd096429f9188b3c0b58e5ef71060761f339d7a797"
   end
 
   depends_on "bun" => :build
