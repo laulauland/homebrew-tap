@@ -1,21 +1,21 @@
 class Mill < Formula
   desc "A runtime for executing TypeScript programs that can spawn agents"
   homepage "https://github.com/laulauland/mill"
-  url "https://github.com/laulauland/mill/archive/refs/tags/v0.1.6.tar.gz"
-  sha256 "7a03b581bbe3871115148d8613594cf994ba9ea469aa3101965d8d1718cf2364"
+  url "https://github.com/laulauland/mill/archive/refs/tags/v0.1.7.tar.gz"
+  sha256 "9e2e9956b5323d2cb9995ee7ab860dd123d1a86d2b2eb4b60a9b435d9967f153"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/laulauland/mill/releases/download/v0.1.6"
-    sha256 arm64_sequoia: "742b831543e4fafbf23c90e450b14cac60e4cdc69754018b23dbbe14a0d870dd"
-    sha256 x86_64_linux: "5f4d31f8fa4ca5cdaf8eb63a4147d61b8287f121c26d4e9209a295459d9506cf"
+    root_url "https://github.com/laulauland/mill/releases/download/v0.1.7"
+    sha256 arm64_sequoia: "c34a96eaef8b1a4100bb3eed4678988420e73808715f457fc5c257b319c82574"
+    sha256 x86_64_linux: "6c2715f0ddae10c7553e95adac8382d63f2eb904d88d0b43816b521e56388395"
   end
 
   depends_on "bun" => :build
 
   def install
     system "bun", "install", "--frozen-lockfile"
-    system "bun", "build", "--compile", "packages/cli/src/bin/mill.ts", "--outfile", "mill"
+    system "bun", "build", "--compile", "packages/cli/src/bin/mill.ts", "--outfile", "mill", "--define", "__MILL_VERSION__=\"#{version}\""
     bin.install "mill"
   end
 
